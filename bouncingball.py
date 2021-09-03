@@ -1,8 +1,11 @@
 import random
 
+import picture
 import stddraw
 
 radious, DT = 0.05, 10.0
+
+earth= picture.Picture("giphy.gif")
 
 stddraw.setXscale(-1.0, 1.0)
 stddraw.setYscale(-1.0, 1.0)
@@ -19,5 +22,6 @@ while True:
     ry += vy
 
     stddraw.clear(stddraw.GRAY)
+    # stddraw.picture(earth,rx,ry)
     stddraw.filledCircle(rx, ry, radious)
     stddraw.show(DT)
