@@ -6,6 +6,7 @@ import sys
 import stdrandom
 
 
+
 def curve(x0, y0, x1, y1, variance, scale_factor):
     if abs(x1 - x0) < 0.01:
         stddraw.line(x0, y0, x1, y1)
