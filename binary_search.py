@@ -15,3 +15,5 @@ def binary_search(t,A):
             L = M+1
 
     return -1
+
+
