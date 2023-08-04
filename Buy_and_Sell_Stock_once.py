@@ -11,3 +11,13 @@ def buy_sell_stock(A):
 
 A = [310, 315, 275, 295, 260, 270, 290, 230, 255, 250]
 print(buy_sell_stock(A))
+
+
+
+
+def buy_sell_stock(A):
+    max_profit,min_so_far=0,float("inf")
+
+    for i in range(0,len(A)):
+        max_profit=max(max_profit,(A[i]-min_so_far))
+        min_so_far=min(min_so_far,A[i])

@@ -14,3 +14,5 @@ def delete_duplicate(A):
 
 A=[1,2,2,2,2,2,5,6,7,8,8,9]
 print(delete_duplicate(A))
+
+
