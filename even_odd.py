@@ -10,5 +10,3 @@ def even_odd(A):
 
     return A
 
-
-    
