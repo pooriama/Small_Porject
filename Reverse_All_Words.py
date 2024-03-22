@@ -1,8 +1,5 @@
-
-
 def reverese_all(s):
-
-    listwords=s.split()
+    listwords = s.split()
     listwords.reverse()
     return " ".join(listwords)
 
