@@ -15,3 +15,4 @@ def find_neareset(paragraph):
 
 paragraph = "all", "work", "and", "no", "play", "makes", "for", "no", "work", "no", "fun", "and", "no"
 print(find_neareset(paragraph))
+
