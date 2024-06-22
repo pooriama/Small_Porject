@@ -41,27 +41,47 @@ cordinate = collections.namedtuple("cordinate", ("x", "y"))
 #     print(search_maze(mat, (0, 0), (9, 9)))
 
 
-def search_maze(maze, s, e):
-    def search_maze_helper(s):
+# def search_maze(maze, s, e):
+#     def search_maze_helper(s):
+#
+#
+#         if not (0 <= s[0] < len(maze)) or not (0 <= s[1] < len(maze[0])) or maze[s[0]][s[1]] != 1:
+#             return False
+#         path.append(s)
+#         maze[s[0]][s[1]]=0
+#         if s == e:
+#             return True
+#         if any(map(search_maze_helper, ((s[0] + 1, s[1]), (s[0] - 1, s[1]), (s[0], s[1] - 1), (s[0], s[1] + 1)))):
+#             return True
+#         del path[-1]
+#         return False
+#
+#
+#     path = []
+#     if not search_maze_helper(s):
+#         return []
+#     return path
 
 
-        if not (0 <= s[0] < len(maze)) or not (0 <= s[1] < len(maze[0])) or maze[s[0]][s[1]] != 1:
+
+def search_maze(mat,cur,end):
+    # print(cur)
+    def search_maze_helper(cur):
+        # print(cur[0],cur[1])
+        if not ((0<=cur[0]<len(mat)) and (0<=cur[1]<len(mat[0])) and (mat[cur[0]][cur[1]] != 0)):
             return False
-        path.append(s)
-        maze[s[0]][s[1]]=0
-        if s == e:
+        path.append(cur)
+        mat[cur[0]][cur[1]] = 0
+        if cur[0]==end[0] and cur[1]== end[1]:
             return True
-        if any(map(search_maze_helper, ((s[0] + 1, s[1]), (s[0] - 1, s[1]), (s[0], s[1] - 1), (s[0], s[1] + 1)))):
+        if (search_maze_helper((cur[0]+1,cur[1])) or search_maze_helper((cur[0]-1,cur[1])) or search_maze_helper((cur[0],cur[1]+1)) or search_maze_helper((cur[0]-1,cur[1]))):
             return True
         del path[-1]
         return False
-
-
     path = []
-    if not search_maze_helper(s):
+    if not search_maze_helper(cur):
         return []
     return path
-
 
 
 
@@ -78,4 +98,5 @@ if __name__ == "__main__":
         [1, 1, 1, 1, 1, 0, 0, 1, 1, 1],
         [0, 0, 1, 0, 0, 1, 1, 0, 0, 1]
     ]
+
     print(search_maze(mat, (0, 0), (9, 9)))
